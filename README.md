@@ -1,0 +1,3 @@
+# C# - Consumindo APIs 
+
+Este repositório tem por objetivo registrar anotações e projetos práticos pertinentes aos meus estudos da linguagem de programação C# consumindo e manipulando APIs externas no curso [C# - Consumindo APIs, Gravando Arquivos e Utilizando o LINQ](https://cursos.alura.com.br/course/c-sharp-consumindo-api-gravando-arquivos-linq) da plataforma de estudos [Alura](https://www.alura.com.br/).
