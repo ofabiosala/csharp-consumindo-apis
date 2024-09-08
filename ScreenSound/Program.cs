@@ -16,8 +16,11 @@ using (HttpClient client = new HttpClient())
         // Console.WriteLine(songs.Count);
         // songs[0].Show();
         // FilterGenre.All(songs);
-        FilterArtist.OrderByAsc(songs);
+        // FilterArtist.OrderByAsc(songs);
         // FilterArtist.OrderByDesc(songs);
+        // FilterArtist.ByGenre(songs, "R&B");
+        // FilterArtist.ByGenre(songs, "pop");
+        FilterArtist.ByGenre(songs, "rock");
     }
     catch (Exception e)
     {
