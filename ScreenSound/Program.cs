@@ -1,4 +1,7 @@
-﻿using (HttpClient client = new HttpClient())
+﻿using ScreenSound.Models;
+using System.Text.Json;
+
+using (HttpClient client = new HttpClient())
 {
     string url = "https://guilhermeonrails.github.io/api-csharp-songs/songs.json";
 
@@ -6,7 +9,10 @@
     {
         string res = await client.GetStringAsync(url);
         // HttpResponseMessage res = await client.GetAsync(url);
-        Console.WriteLine(res);
+        // Console.WriteLine(res);
+        var songs = JsonSerializer.Deserialize<List<Song>>(res)!;
+        // Console.WriteLine(songs.Count);
+        songs[0].Show();
     }
     catch (Exception e)
     {
@@ -37,5 +43,9 @@
 // O bloco "try-catch" permite capturar exceções e tomar ações apropriadas para lidar com elas, garantindo que o programa continue a funcionar de maneira controlada ou informe ao usuário sobre o problema.
 // O bloco "try" contém o código que pode causar uma exceção.
 // O bloco "catch" captura a exceção e armazena em um objeto do tipo "Exception" que pode ser utilizado para exibir detalhes desta para o usuário.
+
+// Em C#, "JsonSerializer" é uma classe fornecida pela biblioteca "System.Text.Json" para lidar com a "serialização" e "desserialização" de objetos JSON.
+// A "serialização" (JsonSerializer.Serialize(object)) é o processo de converter um objeto em uma representação JSON.
+// A "desserialização" (JsonSerializer.Deserialize<Class>(JSON)) é o processo inverso, ou seja, converter uma representação JSON de volta em um objeto C#.
 
 // HTTP Status Code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
