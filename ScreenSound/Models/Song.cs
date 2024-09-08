@@ -20,13 +20,16 @@ internal class Song
     {
         get
         {
-            return $"{Duration / 1000}:{(Duration % 1000).ToString("D2")}";
+            return $"{((Duration / 1000) / 60).ToString("D2")}:{((Duration / 1000) % 60).ToString("D2")}";
         }
     }
 
     public void Show()
     {
-        Console.WriteLine($"{Artist} - {Name} - {Genre} - {DurationInMinutes}");
+        Console.WriteLine($"Artista: {Artist}");
+        Console.WriteLine($"Música: {Name}");
+        Console.WriteLine($"Gênero: {Genre}");
+        Console.WriteLine($"Duração: {DurationInMinutes}");
     }
 }
 
