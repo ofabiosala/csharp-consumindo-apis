@@ -1,6 +1,8 @@
 ﻿using ScreenSound.Models;
-using FilterGenre = ScreenSound.Filters.Genre;
 using FilterArtist = ScreenSound.Filters.Artist;
+using FilterGenre = ScreenSound.Filters.Genre;
+using FilterSong = ScreenSound.Filters.Song;
+using FilterYear = ScreenSound.Filters.Year;
 using System.Text.Json;
 
 using (HttpClient client = new HttpClient())
@@ -15,12 +17,14 @@ using (HttpClient client = new HttpClient())
         var songs = JsonSerializer.Deserialize<List<Song>>(res)!;
         // Console.WriteLine(songs.Count);
         // songs[0].Show();
-        // FilterGenre.All(songs);
         // FilterArtist.OrderByAsc(songs);
         // FilterArtist.OrderByDesc(songs);
         // FilterArtist.ByGenre(songs, "R&B");
         // FilterArtist.ByGenre(songs, "pop");
-        FilterArtist.ByGenre(songs, "rock");
+        // FilterArtist.ByGenre(songs, "rock");
+        // FilterGenre.All(songs);
+        // FilterSong.ByArtist(songs, "My Chemical Romance");
+        FilterYear.ByYear(songs, "2017");
     }
     catch (Exception e)
     {
