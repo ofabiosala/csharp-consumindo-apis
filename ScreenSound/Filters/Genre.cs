@@ -1,15 +1,18 @@
-﻿using ScreenSound.Models;
+﻿using ModelSong = ScreenSound.Models.Song;
 
 namespace ScreenSound.Filters;
 
 internal class Genre
 {
-    public static void All(List<Song> songs)
+    public static void All(List<ModelSong> songs)
     {
         var genres = songs.Select(song => song.Genre).Distinct().ToList();
+
+        Console.WriteLine($"Gêneros:");
+
         foreach (var genre in genres)
         {
-            Console.WriteLine($"{genre}");
+            Console.WriteLine($"> {genre}");
         }
     }
 }
