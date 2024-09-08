@@ -25,12 +25,13 @@ using (HttpClient client = new HttpClient())
         // FilterGenre.All(songs);
         // FilterSong.ByArtist(songs, "My Chemical Romance");
         // FilterYear.ByYear(songs, "2017");
-        FavoriteSongs favoriteSongsByFabio = new FavoriteSongs("Fábio");
+        FavoriteSongs favoriteSongsByFabio = new FavoriteSongs("Fabio");
         favoriteSongsByFabio.AddFavoriteSong(songs[175]);
         favoriteSongsByFabio.AddFavoriteSong(songs[610]);
         favoriteSongsByFabio.AddFavoriteSong(songs[918]);
         favoriteSongsByFabio.AddFavoriteSong(songs[71]);
         favoriteSongsByFabio.ShowFavoriteSongs();
+        favoriteSongsByFabio.ExportFavoriteSongsToJson();
     }
     catch (Exception e)
     {
