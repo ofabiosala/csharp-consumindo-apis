@@ -30,8 +30,10 @@ using (HttpClient client = new HttpClient())
         favoriteSongsByFabio.AddFavoriteSong(songs[610]);
         favoriteSongsByFabio.AddFavoriteSong(songs[918]);
         favoriteSongsByFabio.AddFavoriteSong(songs[71]);
+        favoriteSongsByFabio.AddFavoriteSong(songs[1993]);
         favoriteSongsByFabio.ShowFavoriteSongs();
         favoriteSongsByFabio.ExportFavoriteSongsToJson();
+        favoriteSongsByFabio.ExportFavoriteSongsToTxt();
     }
     catch (Exception e)
     {
