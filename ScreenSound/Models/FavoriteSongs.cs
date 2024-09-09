@@ -45,6 +45,29 @@ internal class FavoriteSongs
             Console.WriteLine(e.Message);
         }
     }
+
+    public void ExportFavoriteSongsToTxt()
+    {
+        string fileName = $"musicas-favoritas-de-{Person.ToLower()}.txt";
+
+        try
+        {
+            using (StreamWriter file = new StreamWriter(fileName))
+            {
+                file.WriteLine($"Músicas Favoritas de {Person}:");
+
+                foreach (var song in Songs)
+                {
+                    file.WriteLine($"> {song.Artist} - {song.Name}");
+                }
+            }
+            Console.WriteLine($"Arquivo TXT gerado com sucesso em: {Path.GetFullPath(fileName)}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
 }
 
 // Anotações
@@ -66,4 +89,8 @@ internal class FavoriteSongs
 // Esta classe é projetada para simplificar o trabalho com caminhos de arquivos, oferecendo uma maneira de construir, modificar e obter informações sobre caminhos de arquivos.
 
 // GetFullPath é utilizado para obter o "caminho absoluto" de um "caminho relativo".
-// Isso é útil quando você precisa transformar um caminho relativo (por exemplo, "file.txt") em um caminho absoluto que inclui a unidade e diretório raiz do sistema de arquivos (por exemplo, "C:\Users\UserOne\Files\file.txt")
+// Isso é útil quando você precisa transformar um caminho relativo (por exemplo, "file.txt") em um caminho absoluto que inclui a unidade e diretório raiz do sistema de arquivos (por exemplo, "C:\Users\UserOne\Files\file.txt").
+
+// StreamWriter é uma classe especializada para escrever caracteres em um fluxo, como um arquivo ou qualquer outro tipo de "stream de saída", com suporte para diferentes codificações de texto.
+
+// Com C#, é possível de criar diversos tipos de arquivos, incluindo arquivos de texto, arquivos binários, arquivos XML, arquivos JSON e muitos outros.
