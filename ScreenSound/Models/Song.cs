@@ -19,6 +19,19 @@ internal class Song
     [JsonPropertyName("duration_ms")]
     public int Duration { get; set; }
 
+    [JsonPropertyName("key")]
+    public int Key { get; set; }
+
+    public string Tonality
+    {
+        get
+        {
+            return tonalities[Key];
+        }
+    }
+
+    private string[] tonalities = { "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B" };
+
     public string DurationInMinutes
     {
         get
@@ -34,6 +47,7 @@ internal class Song
         Console.WriteLine($"Gênero: {Genre}");
         Console.WriteLine($"Ano: {Year}");
         Console.WriteLine($"Duração: {DurationInMinutes}");
+        Console.WriteLine($"Tonalidade: {Tonality}");
     }
 }
 

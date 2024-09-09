@@ -16,7 +16,7 @@ using (HttpClient client = new HttpClient())
         // Console.WriteLine(res);
         var songs = JsonSerializer.Deserialize<List<Song>>(res)!;
         // Console.WriteLine(songs.Count);
-        // songs[0].Show();
+        songs[10].Show();
         // FilterArtist.OrderByAsc(songs);
         // FilterArtist.OrderByDesc(songs);
         // FilterArtist.ByGenre(songs, "R&B");
@@ -25,15 +25,15 @@ using (HttpClient client = new HttpClient())
         // FilterGenre.All(songs);
         // FilterSong.ByArtist(songs, "My Chemical Romance");
         // FilterYear.ByYear(songs, "2017");
-        FavoriteSongs favoriteSongsByFabio = new FavoriteSongs("Fabio");
-        favoriteSongsByFabio.AddFavoriteSong(songs[175]);
-        favoriteSongsByFabio.AddFavoriteSong(songs[610]);
-        favoriteSongsByFabio.AddFavoriteSong(songs[918]);
-        favoriteSongsByFabio.AddFavoriteSong(songs[71]);
-        favoriteSongsByFabio.AddFavoriteSong(songs[1993]);
-        favoriteSongsByFabio.ShowFavoriteSongs();
-        favoriteSongsByFabio.ExportFavoriteSongsToJson();
-        favoriteSongsByFabio.ExportFavoriteSongsToTxt();
+        // FavoriteSongs favoriteSongsByFabio = new FavoriteSongs("Fabio");
+        // favoriteSongsByFabio.AddFavoriteSong(songs[175]);
+        // favoriteSongsByFabio.AddFavoriteSong(songs[610]);
+        // favoriteSongsByFabio.AddFavoriteSong(songs[918]);
+        // favoriteSongsByFabio.AddFavoriteSong(songs[71]);
+        // favoriteSongsByFabio.AddFavoriteSong(songs[1993]);
+        // favoriteSongsByFabio.ShowFavoriteSongs();
+        // favoriteSongsByFabio.ExportFavoriteSongsToJson();
+        // favoriteSongsByFabio.ExportFavoriteSongsToTxt();
     }
     catch (Exception e)
     {
