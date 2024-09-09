@@ -16,4 +16,16 @@ internal class Song
             Console.WriteLine($"> {song.Name}");
         }
     }
+
+    public static void ByTonality(List<ModelSong> allSongs, string tonality)
+    {
+        var songsByTonality= allSongs.Where(song => song.Tonality!.Equals(tonality)).ToList();
+
+        Console.WriteLine($"Músicas Com Tonalidade {tonality}:");
+
+        foreach (var song in songsByTonality)
+        {
+            Console.WriteLine($"> {song.Artist} - {song.Name}");
+        }
+    }
 }

@@ -16,7 +16,7 @@ using (HttpClient client = new HttpClient())
         // Console.WriteLine(res);
         var songs = JsonSerializer.Deserialize<List<Song>>(res)!;
         // Console.WriteLine(songs.Count);
-        songs[10].Show();
+        // songs[10].Show();
         // FilterArtist.OrderByAsc(songs);
         // FilterArtist.OrderByDesc(songs);
         // FilterArtist.ByGenre(songs, "R&B");
@@ -24,6 +24,7 @@ using (HttpClient client = new HttpClient())
         // FilterArtist.ByGenre(songs, "rock");
         // FilterGenre.All(songs);
         // FilterSong.ByArtist(songs, "My Chemical Romance");
+        FilterSong.ByTonality(songs, "C#");
         // FilterYear.ByYear(songs, "2017");
         // FavoriteSongs favoriteSongsByFabio = new FavoriteSongs("Fabio");
         // favoriteSongsByFabio.AddFavoriteSong(songs[175]);
